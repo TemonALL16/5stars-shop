@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5TARS SHOP | Gaming Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <div class="logo" onclick="bukaHalamanUtama()" style="cursor: pointer;">5TARS<span>SHOP</span></div>
+
+        <nav>
+            <a href="#" onclick="bukaHalamanUtama()">Home</a>
+            <a href="#topup" onclick="bukaHalamanUtama()">Top Up</a>
+            <a href="#metode-pembayaran" onclick="bukaHalamanUtama()">Pembayaran</a>
+        </nav>
+
+        <button class="cart-btn">🛒 Keranjang</button>
+    </header>
+
+    <!-- 1. HALAMAN UTAMA (KATALOG GAME) -->
+    <main id="halaman-utama">
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <p class="tagline">YOUR GAMING DESTINATION</p>
+            <h1>LEVEL UP YOUR<br><span>GAME EXPERIENCE.</span></h1>
+            <p class="description">Temukan kebutuhan game impianmu dan nikmati layanan top up instan dalam satu tempat.</p>
+        </section>
+
+        <!-- BANNER PROMO -->
+        <section class="promo-banner">
+            <div class="banner-card">
+                <h2>BOOYAH PASS SEASON 46</h2>
+                <p>Upgrade Booyah Pass sekarang dan koleksi item eksklusifnya!</p>
+            </div>
+        </section>
+
+        <!-- GRID GAME TOP UP -->
+        <section class="products-section" id="topup">
+            <h2>TEMUKAN PRODUK FAVORIT</h2>
+            
+            <div class="product-tabs">
+                <a href="#" class="tab active">Populer</a>
+                <a href="#" class="tab">Games</a>
+                <a href="#" class="tab">Voucher</a>
+            </div>
+
+            <div class="game-grid">
+                <!-- Kartu Valorant -->
+                <div class="game-card" onclick="bukaDetailTopUp('Valorant', 'Valorant - Riot Cash Points', 'Riot Games Services Pte. Ltd.', 'val-bg')">
+                    <div class="game-image val-bg"><span class="badge">Terlaris</span></div>
+                    <div class="game-info">
+                        <h3>Valorant</h3>
+                        <p>Riot Cash</p>
+                    </div>
+                </div>
+
+                <!-- Kartu Mobile Legends -->
+                <div class="game-card" onclick="bukaDetailTopUp('Mobile Legends', 'Mobile Legends: Bang Bang', 'Moonton', 'ml-bg')">
+                    <div class="game-image ml-bg"><span class="badge">Terlaris</span></div>
+                    <div class="game-info">
+                        <h3>Mobile Legends</h3>
+                        <p>Moonton</p>
+                    </div>
+                </div>
+
+                <!-- Kartu Free Fire -->
+                <div class="game-card" onclick="bukaDetailTopUp('Free Fire', 'Free Fire', 'Garena', 'ff-bg')">
+                    <div class="game-image ff-bg"><span class="badge">Terlaris</span></div>
+                    <div class="game-info">
+                        <h3>Free Fire</h3>
+                        <p>Garena</p>
+                    </div>
+                </div>
+
+                <!-- Kartu Roblox -->
+                <div class="game-card" onclick="bukaDetailTopUp('Roblox', 'Roblox', 'Roblox Corporation', 'rbx-bg')">
+                    <div class="game-image rbx-bg"></div>
+                    <div class="game-info">
+                        <h3>Roblox</h3>
+                        <p>Robux Via Gift Card</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION METODE PEMBAYARAN -->
+        <section class="payment-section" id="metode-pembayaran">
+            <h2>Metode <span>Pembayaran</span></h2>
+            <p class="section-desc">Transaksi aman dan instan dengan berbagai pilihan metode pembayaran resmi.</p>
+            
+            <div class="payment-grid">
+                <div class="payment-card">
+                    <h4>QRIS</h4>
+                    <p>Scan QR pakai GoPay, OVO, DANA, BCA, dll.</p>
+                </div>
+                <div class="payment-card">
+                    <h4>E-Wallet</h4>
+                    <p>DANA, OVO, GoPay, LinkAja</p>
+                </div>
+                <div class="payment-card">
+                    <h4>Virtual Account</h4>
+                    <p>BCA, Mandiri, BNI, BRI, Permata</p>
+                </div>
+                <div class="payment-card">
+                    <h4>Minimarket</h4>
+                    <p>Indomaret & Alfamart terdekat</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- 2. HALAMAN DETAIL TOP UP (MUNCUL SAAT GAME DIKLIK) -->
+    <div id="halaman-topup-detail" class="topup-detail-container" style="display: none;">
+        
+        <button class="back-btn" onclick="bukaHalamanUtama()">← Kembali ke Beranda</button>
+
+        <div class="detail-layout">
+            <!-- KOLOM KIRI: INFO GAME & PILIHAN DENOMINASI -->
+            <div class="detail-main">
+                
+                <!-- Card Info Game -->
+                <div class="game-header-card">
+                    <div class="game-header-flex">
+                        <div class="game-logo-box" id="detail-game-img"></div>
+                        <div>
+                            <div class="badges-row">
+                                <span class="mini-badge">✔️ Distributor Resmi</span>
+                                <span class="mini-badge">⚡ Isi Ulang Instan</span>
+                                <span class="mini-badge">🔒 Pembayaran Aman</span>
+                            </div>
+                            <h2 id="detail-game-title">Nama Game</h2>
+                            <p class="publisher-text" id="detail-game-publisher">Publisher</p>
+                        </div>
+                    </div>
+                    <p class="game-desc">
+                        Beli item resmi dengan instant refill. Pilih nominal yang diinginkan, selesaikan pembayaran, dan item akan langsung masuk ke akun kamu!
+                    </p>
+                </div>
+
+                <!-- Step 1: Pilih Jumlah / Denominasi (Akan diisi otomatis oleh script.js) -->
+                <div class="step-card">
+                    <div class="step-title"><span>1</span> Pilih Jumlah</div>
+                    <div class="nominal-grid" id="nominal-container">
+                        <!-- Data nominal muncul dinamis di sini -->
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- KOLOM KANAN: CHECKOUT BOX -->
+            <div class="detail-sidebar">
+                <div class="checkout-box">
+                    <h3>Checkout ⚙️</h3>
+                    
+                    <div class="input-group">
+                        <label>User ID / Tag Game (Wajib)</label>
+                        <input type="text" placeholder="Masukkan ID Game">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Alamat Email (Wajib)</label>
+                        <input type="email" placeholder="Email untuk bukti pembayaran">
+                    </div>
+
+                    <div class="summary-info">
+                        <p><strong>Item:</strong> <span id="summary-item">Belum dipilih</span></p>
+                        <p><strong>Total:</strong> <span id="summary-total" class="price-text">Rp 0</span></p>
+                    </div>
+
+                    <button class="pay-button" onclick="prosesBayar()">Bayar Sekarang</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo">5TARS<span>SHOP</span></div>
+        <p>Tempat kebutuhan gaming favoritmu.</p>
+        <small>© 2026 5TARS SHOP. All rights reserved.</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
